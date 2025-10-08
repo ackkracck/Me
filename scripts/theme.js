@@ -1,23 +1,18 @@
-let toggleButton = document.getElementById("theme-toggle");
-let body = document.body;
+const toggleButton = document.getElementById("theme-toggle");
+const body = document.body;
 
-let darkMode = localStorage.getItem("darkMode");
+let darkMode = localStorage.getItem("darkMode") || "inactive";
+
 if (darkMode === "active") {
     body.classList.add("dark-mode");
 }
 
-const enableDarkMode = () => {
-    body.classList.add("dark-mode");
-    localStorage.setItem("darkMode", "active");
-    darkMode = "active";
-}
-
-const disableDarkMode = () => {
-    body.classList.remove("dark-mode");
-    localStorage.setItem("darkMode", "inactive");
-    darkMode = "inactive";
+const setDarkMode = (isActive) => {
+    body.classList.toggle("dark-mode", isActive);
+    localStorage.setItem("darkMode", isActive ? "active" : "inactive");
+    darkMode = isActive ? "active" : "inactive";
 }
 
 toggleButton.addEventListener("click", () => {
-    darkMode !== "active" ? enableDarkMode() : disableDarkMode();
+    setDarkMode(darkMode !== "active");
 })
