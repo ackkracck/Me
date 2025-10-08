@@ -7,16 +7,31 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    <section class="hero">
-    <div class="hero-content">
-        <img src="./images/headshot.jpeg" alt="Headshot of Arnold Christian" class="headshot">
-        <h1>Hi, I'm <span>Arnold Christian</span></h1>
-        <h2>Turning Code Into Apps... and Worlds</h2>
-        <p>
-            Hey there! I’m Arnold Christian — full stack developer-in-training by day, hobbyist game developer by night. I’ve been hooked on computers since I was a kid, from tinkering with hardware to crafting software. Follow along as I trade my hard hat for a keyboard and code my way from geotechnical engineer to self-taught software engineer.
-        </p>
-    </div>
+
+    <section id="hero">
+        <div class="hero-content">
+
+            <img src="./images/headshot.jpeg" alt="Headshot of Arnold Christian" class="headshot">
+            <h1>Hi, I'm <span>Arnold Christian</span></h1>
+            <h2>Turning Code Into Apps... and Worlds</h2>
+
+            <div class="weather-time">
+                <p id="time">--:--</p>
+                <span>|</span>
+                <p id="temperature">--°C</p>
+                <span>|</span>
+                <p id="description">Loading...</p>
+            </div>
+
+            <p>
+                Hey there! I’m Arnold Christian — full stack developer-in-training by day, hobbyist game developer by night. 
+                I’ve been hooked on computers since I was a kid, from tinkering with hardware to crafting software. 
+                Follow along as I trade my hard hat for a keyboard and code my way from geotechnical engineer to self-taught software engineer.
+            </p>
+        </div>
     </section>
 
+    
+    <script src="./scripts/weather.js"></script>
 </body>
 </html>

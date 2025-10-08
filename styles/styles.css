@@ -18,7 +18,7 @@ body {
 }
 
 /* === Hero Section === */
-.hero {
+#hero {
   width: 100%;
   display: flex;
   align-items: center;
@@ -67,6 +67,19 @@ p {
   line-height: 1.6;
   color: #4a3b2e;
   margin-bottom: 1.8rem;
+}
+
+.weather-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0; 
+    margin: 16px 0;
+}
+
+.weather-time p {
+    margin: 0;
+    padding: 0 8px;
 }
 
 /* === Responsive Design === */
