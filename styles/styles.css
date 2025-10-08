@@ -1,4 +1,57 @@
 /* === Base Styles === */
+
+:root {
+    --bg-color: #f9f3ef; /* soft cream-brown */
+    --text-color: #4a3b2e; /* dark coffee brown */
+    --heading-color: #3a2d23; /* deep brown for headings */
+    --h2-color: #6b5744; /* medium brown for subheadings */
+    --accent-color: #b08b64; /* warm gold-brown accent */
+    --border-color: whitesmoke; /* light border color */
+}
+
+body.dark-mode {
+    --bg-color: #2e2e2e; /* dark background */
+    --text-color: #e0e0e0; /* light text */
+    --heading-color: #ffffff; /* white for headings */
+    --h2-color: #cccccc; /* light gray for subheadings */
+    --accent-color: #E6B57E; /* warm accent */
+}
+
+#theme-toggle {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--background-color);
+    border: 0px;
+    transition: background-color 0.3s, fill 0.3s;
+}
+
+#theme-toggle svg {
+    fill: var(--text-color);
+    width: 30px;
+    height: 30px;
+}
+
+#theme-toggle svg:last-child {
+    display: none;
+}
+
+.dark-mode #theme-toggle svg:first-child {
+    display: none;
+}
+
+.dark-mode #theme-toggle svg:last-child {
+    display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +60,8 @@
 
 body {
   font-family: 'Georgia', serif;
-  background-color: #f9f3ef; /* soft cream-brown */
-  color: #4a3b2e; /* dark coffee brown */
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +88,7 @@ body {
 .headshot {
   width: 300px;
   height: 300px;
-  border: whitesmoke 5px solid; /* dark coffee brown border */
+  border: var(--border-color) 5px solid;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
@@ -46,18 +99,18 @@ body {
 h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #3a2d23;
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
 }
 
 h1 span {
-  color: #b08b64; /* warm gold-brown accent */
+  color: var(--accent-color);
 }
 
 h2 {
   font-size: 1.1rem;
   font-weight: 400;
-  color: #6b5744;
+  color: var(--h2-color);
   margin-bottom: 1.2rem;
 }
 
@@ -65,7 +118,7 @@ h2 {
 p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #4a3b2e;
+  color: var(--text-color);
   margin-bottom: 1.8rem;
 }
 
