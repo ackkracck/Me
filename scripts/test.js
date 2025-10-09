@@ -2,8 +2,6 @@ const temperatureElement = document.getElementById("temperature");
 const weatherDescriptionElement = document.getElementById("description");
 const timeElement = document.getElementById("time");
 
-const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=-37.814&longitude=144.9633&current=temperature_2m,weather_code&timezone=auto`;
-
 const weatherDescriptions = {
   0: "clear sky",
   1: "mostly clear",
@@ -35,9 +33,11 @@ const weatherDescriptions = {
   99: "severe storm"
 };
 
+let weatherUrl1 = `https://api.open-meteo.com/v1/forecast?latitude=-37.814&longitude=144.9633&current=temperature_2m,weather_code&timezone=auto`;
+
 async function fetchWeather() {
     try {
-        const response = await fetch(weatherUrl);
+        const response = await fetch(weatherUrl1);
         const data = await response.json();
         
         temperatureElement.textContent = data.current.temperature_2m + '°C';
@@ -50,11 +50,7 @@ async function fetchWeather() {
 
 function updateTime() {
   const now = new Date();
-  const options = {
-    hour: '2-digit', 
-    minute: '2-digit', 
-    second: '2-digit', 
-    timeZone: 'Australia/Melbourne'};
+  const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Australia/Melbourne' };
   timeElement.textContent = now.toLocaleTimeString('en-AU', options);
 }
 
