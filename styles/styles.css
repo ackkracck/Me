@@ -1,63 +1,65 @@
 /* === Base Styles === */
-
 :root {
-    --bg-color: #f9f3ef; /* soft cream-brown */
-    --text-color: #4a3b2e; /* dark coffee brown */
-    --heading-color: #3a2d23; /* deep brown for headings */
-    --h2-color: #6b5744; /* medium brown for subheadings */
-    --accent-color: #b08b64; /* warm gold-brown accent */
-    --border-color: whitesmoke; /* light border color */
+  --bg-color: #f9f3ef; /* soft cream-brown */
+  --text-color: #4a3b2e; /* dark coffee brown */
+  --heading-color: #3a2d23; /* deep brown for headings */
+  --h2-color: #6b5744; /* medium brown for subheadings */
+  --accent-color: #b08b64; /* warm gold-brown accent */
+  --border-color: whitesmoke; /* light border color */
 }
 
 body.dark-mode {
-    --bg-color: #2e2e2e; /* dark background */
-    --text-color: #e0e0e0; /* light text */
-    --heading-color: #ffffff; /* white for headings */
-    --h2-color: #cccccc; /* light gray for subheadings */
-    --accent-color: #E6B57E; /* warm accent */
+  --bg-color: #2e2e2e; /* dark background */
+  --text-color: #e0e0e0; /* light text */
+  --heading-color: #ffffff; /* white for headings */
+  --h2-color: #cccccc; /* light gray for subheadings */
+  --accent-color: #e6b57e; /* warm accent */
 }
 
+/* === Theme Toggle Button === */
 #theme-toggle {
-    border-radius: 50%;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--background-color);
-    border: 0px;
-    transition: background-color 0.3s, fill 0.3s;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--bg-color); /* ✅ fixed from --background-color */
+  border: none;
+  transition: background-color 0.3s, fill 0.3s;
 }
 
 #theme-toggle svg {
-    fill: var(--text-color);
-    width: 30px;
-    height: 30px;
+  fill: var(--text-color);
+  width: 30px;
+  height: 30px;
 }
 
 #theme-toggle svg:last-child {
-    display: none;
+  display: none;
 }
 
 .dark-mode #theme-toggle svg:first-child {
-    display: none;
+  display: none;
 }
 
 .dark-mode #theme-toggle svg:last-child {
-    display: block;
+  display: block;
 }
 
+/* === Global Reset === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* === Body === */
 body {
   font-family: 'Georgia', serif;
   background-color: var(--bg-color);
@@ -89,7 +91,7 @@ body {
 .headshot {
   width: 300px;
   height: 300px;
-  border: var(--border-color) 5px solid;
+  border: 5px solid var(--border-color);
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
@@ -124,17 +126,18 @@ p {
   margin-bottom: 1.8rem;
 }
 
+/* === Weather & Time === */
 .weather-time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0; 
-    margin: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 16px 0;
 }
 
 .weather-time p {
-    margin: 0;
-    padding: 0 8px;
+  margin: 0;
+  padding: 0 8px;
 }
 
 /* === Responsive Design === */
